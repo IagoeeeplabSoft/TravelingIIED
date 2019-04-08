@@ -6,8 +6,11 @@
 package Principal;
 
 import Visao.Gerente.LoginGerente;
-imo
+
 /**
+ *
+ * @author Traveling IIED
+ *//**
  *
  * @author Traveling IIED
  */
@@ -18,6 +21,10 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+    }
+
+    Menu(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -121,7 +128,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-          new LoginVendedor().setVisible(true);
+          
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void DestinosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DestinosMouseClicked
@@ -133,7 +140,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_FuncionarioMouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-         new LoginPiloto().setVisible(true);
+         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
