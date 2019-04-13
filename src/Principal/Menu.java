@@ -6,7 +6,10 @@
 package Principal;
 
 import Visao.Gerente.LoginGerente;
-imo
+import Visao.Piloto.LoginPiloto;
+import Visao.Vendedor.LoginVendedor;
+  
+        
 /**
  *
  * @author Traveling IIED

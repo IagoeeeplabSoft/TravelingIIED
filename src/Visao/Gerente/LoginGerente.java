@@ -5,6 +5,8 @@
  */
 package Visao.Gerente;
 
+import static java.time.Clock.system;
+
 /**
  *
  * @author Traveling IIED
@@ -51,10 +53,8 @@ public class LoginGerente extends javax.swing.JFrame {
         jLabel2.setText("Login Gerente");
         jLabel2.setToolTipText("");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("E-mail");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Senha");
 
         jButton1.setBackground(new java.awt.Color(102, 204, 255));
@@ -123,7 +123,7 @@ public class LoginGerente extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 552, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
