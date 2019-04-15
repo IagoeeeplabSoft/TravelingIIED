@@ -5,6 +5,9 @@
  */
 package Visao.Vendedor;
 
+import DAO.Conexao;
+import java.sql.Connection;
+
 /**
  *
  * @author Traveling IIED
@@ -30,9 +33,9 @@ public class LoginVendedor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tfEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        pfSenha = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -46,10 +49,8 @@ public class LoginVendedor extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Login Vendedor");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("E-mail");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Senha");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/vendedor.png"))); // NOI18N
@@ -73,9 +74,9 @@ public class LoginVendedor extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1)
+                            .addComponent(tfEmail)
                             .addComponent(jLabel3)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)))
+                            .addComponent(pfSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel1)
@@ -100,11 +101,11 @@ public class LoginVendedor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(16, 16, 16))
@@ -158,7 +159,9 @@ public class LoginVendedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+   Connection con = Conexao.AbrirConexao();
+        String email = tfEmail.getText();
+        String senha = pfSenha.getText();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -205,7 +208,7 @@ public class LoginVendedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField pfSenha;
+    private javax.swing.JTextField tfEmail;
     // End of variables declaration//GEN-END:variables
 }
