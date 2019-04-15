@@ -36,7 +36,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Destinos = new javax.swing.JMenu();
-        Funcionario = new javax.swing.JMenu();
+        gerente = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -67,10 +67,10 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenuBar1.add(Destinos);
 
-        Funcionario.setText("Funcionarios");
-        Funcionario.addMouseListener(new java.awt.event.MouseAdapter() {
+        gerente.setText("Funcionarios");
+        gerente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                FuncionarioMouseClicked(evt);
+                gerenteMouseClicked(evt);
             }
         });
 
@@ -80,7 +80,7 @@ public class Menu extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        Funcionario.add(jMenuItem1);
+        gerente.add(jMenuItem1);
 
         jMenuItem3.setText("Piloto ");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +88,7 @@ public class Menu extends javax.swing.JFrame {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        Funcionario.add(jMenuItem3);
+        gerente.add(jMenuItem3);
 
         jMenuItem2.setText("Vendedor ");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -96,9 +96,9 @@ public class Menu extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        Funcionario.add(jMenuItem2);
+        gerente.add(jMenuItem2);
 
-        jMenuBar1.add(Funcionario);
+        jMenuBar1.add(gerente);
 
         jMenu2.setText("Sobre");
         jMenuBar1.add(jMenu2);
@@ -120,7 +120,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-         new LoginGerente().setVisible(true);
+         LoginGerente  g = new LoginGerente();
+         g.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -131,9 +132,9 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_DestinosMouseClicked
 
-    private void FuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FuncionarioMouseClicked
+    private void gerenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gerenteMouseClicked
       
-    }//GEN-LAST:event_FuncionarioMouseClicked
+    }//GEN-LAST:event_gerenteMouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
          new LoginPiloto().setVisible(true);
@@ -176,7 +177,7 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Destinos;
-    private javax.swing.JMenu Funcionario;
+    private javax.swing.JMenu gerente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

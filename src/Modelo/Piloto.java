@@ -13,4 +13,29 @@ public class Piloto {
     private String login;
     private String senha;
     private int codigoPiloto;  
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public int getCodigoPiloto() {
+        return codigoPiloto;
+    }
+
+    public void setCodigoPiloto(int codigoPiloto) {
+        this.codigoPiloto = codigoPiloto;
+    }
+    
 }
