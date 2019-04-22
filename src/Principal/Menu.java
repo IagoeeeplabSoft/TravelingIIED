@@ -5,9 +5,9 @@
  */
 package Principal;
 
-import Visao.Gerente.LoginGerente;
-import Visao.Piloto.LoginPiloto;
-import Visao.Vendedor.LoginVendedor;
+import Tela.LoginGerente;
+import Tela.LoginPiloto;
+import Tela.LoginVendedor;
   
         
 /**
