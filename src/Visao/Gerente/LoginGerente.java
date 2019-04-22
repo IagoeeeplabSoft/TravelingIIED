@@ -195,7 +195,7 @@ public void windowClosing(WindowEvent e) {
             JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Login", JOptionPane.WARNING_MESSAGE);
             
         }else{
-             Connection con = Conexao.AbrirConexao();
+            // Connection con = Conexao.AbrirConexao();
             FuncionarioDAO sql = new FuncionarioDAO(con);
             Gerente g = new Gerente();
         }

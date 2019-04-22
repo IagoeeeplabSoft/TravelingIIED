@@ -109,9 +109,9 @@ public class FuncionarioDAO extends ExecuteSQL{
         }
     
     }
-    public int Login(Funcioanrio F){
-    String sql = "SELECT Login, Senha FORM Funcioanario WHERE Login = ? AND Senha = ?";
-    }
+   // public int Login(Funcioanrio F){
+   // String sql = "SELECT Login, Senha FORM Funcioanario WHERE Login = ? AND Senha = ?";
+   // }
 }
 
 
