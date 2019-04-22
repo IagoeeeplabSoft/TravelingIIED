@@ -17,10 +17,10 @@ public class Conexao {
         Connection con = null;
         try{
         Class.forName("com.mysql.jdbc.Driver");
-        String url = "jdbc:mysql://127.0.0.1:3333/funcionario";
+        String url = "jdbc:mysql://127.0.0.1:3306/travelingiied";
         con = DriverManager.getConnection(url, "root", "admin");
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Erro na Conexão com o banco ","trabalhoexemplo",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Erro na Conexão com o banco ","TravelingIIED",JOptionPane.ERROR_MESSAGE);
             e.getMessage();
         }
         return con;
