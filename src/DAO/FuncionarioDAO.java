@@ -11,6 +11,7 @@ import Modelo.Piloto;
 import Modelo.Gerente;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -109,9 +110,24 @@ public class FuncionarioDAO extends ExecuteSQL{
         }
     
     }
-   // public int Login(Funcioanrio F){
-   // String sql = "SELECT Login, Senha FORM Funcioanario WHERE Login = ? AND Senha = ?";
-   // }
+     public boolean checkLogin(String login,String senha) throws SQLException{
+           Connection con = Conexao.AbrirConexao();
+           PreparedStatement stmt = null;
+           ResultSet rs= null;
+           boolean check = false; 
+           try { 
+               stmt = con.prepareStatement("SELECT * FROM funcionario");
+               rs = stmt.execureQuery();
+               
+               while(rs.next()){
+                   Funcionario funcionario = new Funcionario();
+                   funcionario.setId(rs.getInt("id"));
+                   funcionario.setLogin(rs.getString("descricao"));
+               
+               }
+           }
+             }
+     
 }
 
 
