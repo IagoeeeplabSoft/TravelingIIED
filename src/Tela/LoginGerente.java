@@ -6,6 +6,7 @@
 package Tela;
 import DAO.Conexao;
 import DAO.FuncionarioDAO;
+import Modelo.Funcionario;
 import Modelo.Gerente;
 import java.awt.Frame;
 import java.awt.event.WindowEvent;
@@ -20,12 +21,13 @@ import javax.swing.JOptionPane;
  * @author Traveling IIED
  */
 public class LoginGerente extends javax.swing.JFrame {
-
+ Connection con = Conexao.AbrirConexao();
     /**
      * Creates new form LoginGerente
      */
     public LoginGerente() {
         initComponents();
+        
          setTitle("Login do Gerente");
         this.dispose();
        
@@ -189,15 +191,15 @@ public void windowClosing(WindowEvent e) {
         Connection con = Conexao.AbrirConexao();
         String email = tfEmail.getText();
         String senha = pfSenha.getText();
+         FuncionarioDAO fDao = FuncionarioDAO(con);
+         Funcionario f1 = new Funcionario();
         
        
-        if (email.equalsIgnoreCase("") || senha.equalsIgnoreCase("") ) {
+        if (email.equals("") || senha.equals("") ) {
             JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Login", JOptionPane.WARNING_MESSAGE);
             
         }else{
-            // Connection con = Conexao.AbrirConexao();
-            FuncionarioDAO sql = new FuncionarioDAO(con);
-            Gerente g = new Gerente();
+        fDao.validar(email, senha, senha);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -255,4 +257,8 @@ public void windowClosing(WindowEvent e) {
     private javax.swing.JPasswordField pfSenha;
     private javax.swing.JTextField tfEmail;
     // End of variables declaration//GEN-END:variables
+
+    private FuncionarioDAO FuncionarioDAO(Connection con) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

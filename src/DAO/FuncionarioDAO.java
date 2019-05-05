@@ -9,11 +9,15 @@ import java.sql.Connection;
 import Modelo.Funcionario;
 import Modelo.Piloto;
 import Modelo.Gerente;
+import Tela.telaGerente;
+import Tela.telaVendedor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -110,23 +114,36 @@ public class FuncionarioDAO extends ExecuteSQL{
         }
     
     }
-     public boolean checkLogin(String login,String senha) throws SQLException{
-           Connection con = Conexao.AbrirConexao();
-           PreparedStatement stmt = null;
-           ResultSet rs= null;
-           boolean check = false; 
-           try { 
-               stmt = con.prepareStatement("SELECT * FROM funcionario");
-               rs = stmt.execureQuery();
-               
-               while(rs.next()){
-                   Funcionario funcionario = new Funcionario();
-                   funcionario.setId(rs.getInt("id"));
-                   funcionario.setLogin(rs.getString("descricao"));
-               
+    public void validar(String login, String senha, String cargo ){
+         Connection con = Conexao.AbrirConexao();
+    int resultado = 0;
+    String c = cargo;
+    String l= login;
+    String s = senha;
+        try {
+            String sql="selec form funcionario where login ='"+l+"' and senha='"+s+"' ";
+           Statement st = con.createStatement();
+           ResultSet rs = st.executeQuery(sql);
+           if(rs.next()){
+           resultado = 1;
+           if(resultado == 1){
+               switch(c){
+                   case "Gerente" :  telaGerente  g = new telaGerente();
+         g.setVisible(true); 
+                           break;
+                     case "Vendedor" :  telaVendedor  v = new telaVendedor();
+         v.setVisible(true); 
+                           break;
                }
            }
-             }
+           }else{
+           JOptionPane.showMessageDialog(null, "Erro Usuario não cadastrado ");
+           }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro Usuario não cadastrado ");
+        }
+    }
+           
      
 }
 

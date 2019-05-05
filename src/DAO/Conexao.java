@@ -32,4 +32,8 @@ public class Conexao {
         System.out.println(e.getMessage());
         }
     }
+
+    static Object getConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
