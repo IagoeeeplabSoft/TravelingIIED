@@ -189,17 +189,19 @@ public void windowClosing(WindowEvent e) {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Connection con = Conexao.AbrirConexao();
-        String email = tfEmail.getText();
+        String login = tfEmail.getText();
         String senha = pfSenha.getText();
-         FuncionarioDAO fDao = FuncionarioDAO(con);
+         FuncionarioDAO fDao = new FuncionarioDAO(con);
          Funcionario f1 = new Funcionario();
+         String cargo = "Gerente";
         
        
-        if (email.equals("") || senha.equals("") ) {
+        if (login.equals("") || senha.equals("") ) {
             JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Login", JOptionPane.WARNING_MESSAGE);
             
         }else{
-        fDao.validar(email, senha, senha);
+          fDao.validar(login, senha, cargo);  
+        
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -258,7 +260,7 @@ public void windowClosing(WindowEvent e) {
     private javax.swing.JTextField tfEmail;
     // End of variables declaration//GEN-END:variables
 
-    private FuncionarioDAO FuncionarioDAO(Connection con) {
+    private FuncionarioDAO FuncionarioDAO(Connection con1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

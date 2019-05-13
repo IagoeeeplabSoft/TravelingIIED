@@ -116,17 +116,19 @@ public class FuncionarioDAO extends ExecuteSQL{
     }
     public void validar(String login, String senha, String cargo ){
          Connection con = Conexao.AbrirConexao();
+          
     int resultado = 0;
-    String c = cargo;
+   String c = cargo;
     String l= login;
     String s = senha;
         try {
-            String sql="selec form funcionario where login ='"+l+"' and senha='"+s+"' ";
+            String sql="select login , senha form   funcionario where login ='"+l+"' and senha='"+s+"'";
            Statement st = con.createStatement();
            ResultSet rs = st.executeQuery(sql);
            if(rs.next()){
            resultado = 1;
            if(resultado == 1){
+               
                switch(c){
                    case "Gerente" :  telaGerente  g = new telaGerente();
          g.setVisible(true); 

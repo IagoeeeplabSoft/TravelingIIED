@@ -16,9 +16,9 @@ public class Conexao {
      public static Connection AbrirConexao(){
         Connection con = null;
         try{
-        Class.forName("com.mysql.jdbc.Driver");
-        String url = "jdbc:mysql://127.0.0.1:3306/travelingiied";
-        con = DriverManager.getConnection(url, "root", "admin");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:mysql://127.0.0.1:3306/travelingiied ?useTimezone=true&serverTimezone=UTC";
+        con = DriverManager.getConnection(url, "root", "");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Erro na Conexão com o banco ","TravelingIIED",JOptionPane.ERROR_MESSAGE);
             e.getMessage();
@@ -33,7 +33,5 @@ public class Conexao {
         }
     }
 
-    static Object getConnection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
