@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="0" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="46" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jTextField5" min="-2" pref="191" max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField3" min="-2" pref="287" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jPasswordField1" alignment="0" pref="165" max="32767" attributes="0"/>
+                          <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jTextField6" min="-2" pref="191" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" pref="92" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField1" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField2" min="-2" pref="174" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPasswordField1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="jTextField1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NOME"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SOBRENOME"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField3">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="E-MAIL"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SENHA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField4">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="TELEFONE"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="36" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Crie a sua conta Traveling"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Img/Img/icons1/icons8-gerente-52.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField6">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="LOCALIDADE"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="184">
+                <StringItem index="0" value="Abaiara"/>
+                <StringItem index="1" value="Acarape"/>
+                <StringItem index="2" value="Acara&#xfa;"/>
+                <StringItem index="3" value="Acopiara"/>
+                <StringItem index="4" value="Aiuaba"/>
+                <StringItem index="5" value="Alc&#xe2;ntaras"/>
+                <StringItem index="6" value="Altaneira"/>
+                <StringItem index="7" value="Alto Santo"/>
+                <StringItem index="8" value="Amontada"/>
+                <StringItem index="9" value="Antonina do Norte"/>
+                <StringItem index="10" value="Apuiar&#xe9;s"/>
+                <StringItem index="11" value="Aquiraz"/>
+                <StringItem index="12" value="Aracati"/>
+                <StringItem index="13" value="Aracoiaba"/>
+                <StringItem index="14" value="Ararend&#xe1;"/>
+                <StringItem index="15" value="Araripe"/>
+                <StringItem index="16" value="Aratuba"/>
+                <StringItem index="17" value="Arneiroz"/>
+                <StringItem index="18" value="Assar&#xe9;"/>
+                <StringItem index="19" value="Aurora"/>
+                <StringItem index="20" value="Baixio"/>
+                <StringItem index="21" value="Banabui&#xfa;"/>
+                <StringItem index="22" value="Barbalha"/>
+                <StringItem index="23" value="Barreira"/>
+                <StringItem index="24" value="Barro"/>
+                <StringItem index="25" value="Barroquinha"/>
+                <StringItem index="26" value="Baturit&#xe9;"/>
+                <StringItem index="27" value="Beberibe"/>
+                <StringItem index="28" value="Bela Cruz"/>
+                <StringItem index="29" value="Boa Viagem"/>
+                <StringItem index="30" value="Brejo Santo"/>
+                <StringItem index="31" value="Camocim"/>
+                <StringItem index="32" value="Campos Sales"/>
+                <StringItem index="33" value="Canind&#xe9;"/>
+                <StringItem index="34" value="Capistrano"/>
+                <StringItem index="35" value="Caridade"/>
+                <StringItem index="36" value="Carir&#xe9;"/>
+                <StringItem index="37" value="Cariria&#xe7;u"/>
+                <StringItem index="38" value="Cari&#xfa;s"/>
+                <StringItem index="39" value="Carnaubal"/>
+                <StringItem index="40" value="Cascavel"/>
+                <StringItem index="41" value="Catarina"/>
+                <StringItem index="42" value="Catunda"/>
+                <StringItem index="43" value="Caucaia"/>
+                <StringItem index="44" value="Cedro"/>
+                <StringItem index="45" value="Chaval"/>
+                <StringItem index="46" value="Chor&#xf3;"/>
+                <StringItem index="47" value="Chorozinho"/>
+                <StringItem index="48" value="Corea&#xfa;"/>
+                <StringItem index="49" value="Crate&#xfa;s"/>
+                <StringItem index="50" value="Crato"/>
+                <StringItem index="51" value="Croat&#xe1;"/>
+                <StringItem index="52" value="Cruz"/>
+                <StringItem index="53" value="Deputado Irapuan Pinheiro"/>
+                <StringItem index="54" value="Erer&#xea;"/>
+                <StringItem index="55" value="Eus&#xe9;bio"/>
+                <StringItem index="56" value="Farias Brito"/>
+                <StringItem index="57" value="Forquilha"/>
+                <StringItem index="58" value="Fortaleza"/>
+                <StringItem index="59" value="Fortim"/>
+                <StringItem index="60" value="Frecheirinha"/>
+                <StringItem index="61" value="General Sampaio"/>
+                <StringItem index="62" value="Gra&#xe7;a"/>
+                <StringItem index="63" value="Granja"/>
+                <StringItem index="64" value="Granjeiro"/>
+                <StringItem index="65" value="Groa&#xed;ras"/>
+                <StringItem index="66" value="Guai&#xfa;ba"/>
+                <StringItem index="67" value="Guaraciaba do Norte"/>
+                <StringItem index="68" value="Guaramiranga"/>
+                <StringItem index="69" value="Hidrol&#xe2;ndia"/>
+                <StringItem index="70" value="Horizonte"/>
+                <StringItem index="71" value="Ibaretama"/>
+                <StringItem index="72" value="Ibiapina"/>
+                <StringItem index="73" value="Ibicuitinga"/>
+                <StringItem index="74" value="Icapu&#xed;"/>
+                <StringItem index="75" value="Ic&#xf3;"/>
+                <StringItem index="76" value="Iguatu"/>
+                <StringItem index="77" value="Independ&#xea;ncia"/>
+                <StringItem index="78" value="Ipaporanga"/>
+                <StringItem index="79" value="Ipaumirim"/>
+                <StringItem index="80" value="Ipu"/>
+                <StringItem index="81" value="Ipueiras"/>
+                <StringItem index="82" value="Iracema"/>
+                <StringItem index="83" value="Irau&#xe7;uba"/>
+                <StringItem index="84" value="Itai&#xe7;aba"/>
+                <StringItem index="85" value="Itaitinga"/>
+                <StringItem index="86" value="Itapag&#xe9;"/>
+                <StringItem index="87" value="Itapipoca"/>
+                <StringItem index="88" value="Itapi&#xfa;na"/>
+                <StringItem index="89" value="Itarema"/>
+                <StringItem index="90" value="Itatira"/>
+                <StringItem index="91" value="Jaguaretama"/>
+                <StringItem index="92" value="Jaguaribara"/>
+                <StringItem index="93" value="Jaguaribe"/>
+                <StringItem index="94" value="Jaguaruana"/>
+                <StringItem index="95" value="Jardim"/>
+                <StringItem index="96" value="Jati"/>
+                <StringItem index="97" value="Jijoca de Jericoacoara"/>
+                <StringItem index="98" value="Juazeiro do Norte"/>
+                <StringItem index="99" value="Juc&#xe1;s"/>
+                <StringItem index="100" value="Lavras da Mangabeira"/>
+                <StringItem index="101" value="Limoeiro do Norte"/>
+                <StringItem index="102" value="Madalena"/>
+                <StringItem index="103" value="Maracana&#xfa;"/>
+                <StringItem index="104" value="Maranguape"/>
+                <StringItem index="105" value="Marco"/>
+                <StringItem index="106" value="Martin&#xf3;pole"/>
+                <StringItem index="107" value="Massap&#xea;"/>
+                <StringItem index="108" value="Mauriti"/>
+                <StringItem index="109" value="Meruoca"/>
+                <StringItem index="110" value="Milagres"/>
+                <StringItem index="111" value="Milh&#xe3;"/>
+                <StringItem index="112" value="Mira&#xed;ma"/>
+                <StringItem index="113" value="Miss&#xe3;o Velha"/>
+                <StringItem index="114" value="Momba&#xe7;a"/>
+                <StringItem index="115" value="Monsenhor Tabosa"/>
+                <StringItem index="116" value="Morada Nova"/>
+                <StringItem index="117" value="Mora&#xfa;jo"/>
+                <StringItem index="118" value="Morrinhos"/>
+                <StringItem index="119" value="Mucambo"/>
+                <StringItem index="120" value="Mulungu"/>
+                <StringItem index="121" value="Nova Olinda"/>
+                <StringItem index="122" value="Nova Russas"/>
+                <StringItem index="123" value="Novo Oriente"/>
+                <StringItem index="124" value="Ocara"/>
+                <StringItem index="125" value="Or&#xf3;s"/>
+                <StringItem index="126" value="Pacajus"/>
+                <StringItem index="127" value="Pacatuba"/>
+                <StringItem index="128" value="Pacoti"/>
+                <StringItem index="129" value="Pacuj&#xe1;"/>
+                <StringItem index="130" value="Palhano"/>
+                <StringItem index="131" value="Palm&#xe1;cia"/>
+                <StringItem index="132" value="Paracuru"/>
+                <StringItem index="133" value="Paraipaba"/>
+                <StringItem index="134" value="Parambu"/>
+                <StringItem index="135" value="Paramoti"/>
+                <StringItem index="136" value="Pedra Branca"/>
+                <StringItem index="137" value="Penaforte"/>
+                <StringItem index="138" value="Pentecoste"/>
+                <StringItem index="139" value="Pereiro"/>
+                <StringItem index="140" value="Pindoretama"/>
+                <StringItem index="141" value="Piquet Carneiro"/>
+                <StringItem index="142" value="Pires Ferreira"/>
+                <StringItem index="143" value="Poranga"/>
+                <StringItem index="144" value="Porteiras"/>
+                <StringItem index="145" value="Potengi"/>
+                <StringItem index="146" value="Potiretama"/>
+                <StringItem index="147" value="Quiterian&#xf3;polis"/>
+                <StringItem index="148" value="Quixad&#xe1;"/>
+                <StringItem index="149" value="Quixel&#xf4;"/>
+                <StringItem index="150" value="Quixeramobim"/>
+                <StringItem index="151" value="Quixer&#xe9;"/>
+                <StringItem index="152" value="Reden&#xe7;&#xe3;o"/>
+                <StringItem index="153" value="Reriutaba"/>
+                <StringItem index="154" value="Russas"/>
+                <StringItem index="155" value="Saboeiro"/>
+                <StringItem index="156" value="Salitre"/>
+                <StringItem index="157" value="Santa Quit&#xe9;ria"/>
+                <StringItem index="158" value="Santana do Acara&#xfa;"/>
+                <StringItem index="159" value="Santana do Cariri"/>
+                <StringItem index="160" value="S&#xe3;o Benedito"/>
+                <StringItem index="161" value="S&#xe3;o Gon&#xe7;alo do Amarante"/>
+                <StringItem index="162" value="S&#xe3;o Jo&#xe3;o do Jaguaribe"/>
+                <StringItem index="163" value="S&#xe3;o Lu&#xed;s do Curu"/>
+                <StringItem index="164" value="Senador Pompeu"/>
+                <StringItem index="165" value="Senador S&#xe1;"/>
+                <StringItem index="166" value="Sobral"/>
+                <StringItem index="167" value="Solon&#xf3;pole"/>
+                <StringItem index="168" value="Tabuleiro do Norte"/>
+                <StringItem index="169" value="Tamboril"/>
+                <StringItem index="170" value="Tarrafas"/>
+                <StringItem index="171" value="Tau&#xe1;"/>
+                <StringItem index="172" value="Teju&#xe7;uoca"/>
+                <StringItem index="173" value="Tiangu&#xe1;"/>
+                <StringItem index="174" value="Trairi"/>
+                <StringItem index="175" value="Tururu"/>
+                <StringItem index="176" value="Ubajara"/>
+                <StringItem index="177" value="Umari"/>
+                <StringItem index="178" value="Umirim"/>
+                <StringItem index="179" value="Uruburetama"/>
+                <StringItem index="180" value="Uruoca"/>
+                <StringItem index="181" value="Varjota"/>
+                <StringItem index="182" value="V&#xe1;rzea Alegre"/>
+                <StringItem index="183" value="Vi&#xe7;osa do Cear&#xe1;"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField5">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CPF"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Crie conta"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel4">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="b2" green="ef" red="7b" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </SubComponents>
+</Form>
