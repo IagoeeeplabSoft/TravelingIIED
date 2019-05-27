@@ -11,6 +11,7 @@ package Modelo;
  */
 public class Funcionario {
    private int codigo;
+   private byte[] foto;
    private String nome;
    private String sobrenome;
   private String telefone;
@@ -112,4 +113,11 @@ public class Funcionario {
        }
        return salario;
    }
+     public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
 }

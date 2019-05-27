@@ -30,19 +30,19 @@ public class FuncionarioDAO extends ExecuteSQL{
     public FuncionarioDAO(Connection con) {
         super(con);
     }
-    public String Inserir_Funcionario(Funcionario f){
-        String sql = "INSERT INTO funcionario VALUES (0,?,?,?,?,?,?)";
+    public String Inserir_Funcionario(String nome, String sobrenome, String email,String senha,String telefone,String cpf){
+        String nomeF, sobrenomeF, loginF, senhaF, telefoneF, cpfF;
+        nomeF = nome;
+        sobrenomeF = sobrenome ;
+        loginF = email;
+        senhaF = senha;
+        telefoneF = telefone;
+        cpfF = cpf;
+        
+        String sql = "INSERT INTO funcionario VALUES'"+nomeF+"'"+sobrenomeF+"''"+loginF+"''"+senhaF+"''"+telefoneF+"''"+cpfF+"'";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             
-            ps.setString(1, f.getNome());
-            ps.setString(2, f.getSobrenome());
-            ps.setString(3, f.getTelefone());
-            ps.setString(4, f.getEndereco());
-            ps.setString(5, f.getCargo());
-            ps.setString(6, f.getCpf());
-            
-
             
             if(ps.executeUpdate() > 0){
                 return "Funcionario Cadastrado com Sucesso!";
@@ -53,6 +53,29 @@ public class FuncionarioDAO extends ExecuteSQL{
             return e.getMessage();
         }
     }
+      public String Inserir_Endereco(String rua, String bairro, String estado,String cidade){
+        String ruaF, bairroF, estadoF, cidadeF;
+        ruaF = rua;
+        bairroF = bairro;
+        estadoF = estado;
+        cidadeF = cidade;
+        
+        
+        String sql = "INSERT INTO funcionario VALUES'"+ruaF+"'"+bairroF+"''"+estadoF+"''"+cidadeF+"'";
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            
+            
+            if(ps.executeUpdate() > 0){
+                return "Endereço  Cadastrado com Sucesso!";
+            }else{
+                return "Erro ao Cadastrar Endereço!";
+            }
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+    
      public void Alterar_Funcionario(Funcionario f){
         String sql = "UPDATE funcionario SET nome = ?, login = ?, senha = ?"
                 + "WHERE codigo = ?";
@@ -122,7 +145,7 @@ public class FuncionarioDAO extends ExecuteSQL{
     String l= login;
     String s = senha;
         try {
-            String sql="select login , senha form   funcionario where login ='"+l+"' and senha='"+s+"'";
+            String sql="SELECT login, senha FROM   funcionario WHERE login ='"+l+"' AND senha='"+s+"'";
            Statement st = con.createStatement();
            ResultSet rs = st.executeQuery(sql);
            if(rs.next()){

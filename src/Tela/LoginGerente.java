@@ -201,7 +201,7 @@ public void windowClosing(WindowEvent e) {
             
         }else{
           fDao.validar(login, senha, cargo);  
-        
+         dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
