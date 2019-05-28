@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author José Iago
  */
-public class Veico {
+public class Veiculo {
  private String marca;
  private int[] lugares ;
 

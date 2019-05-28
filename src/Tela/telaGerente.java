@@ -5,12 +5,17 @@
  */
 package Tela;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author José Iago
  */
 public class telaGerente extends javax.swing.JFrame {
-
+  public static void inserirdados(){
+   
+   
+  }
     /**
      * Creates new form telaGerente
      */
@@ -31,6 +36,8 @@ public class telaGerente extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jlNome = new javax.swing.JLabel();
+        jlSobrenome = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -74,15 +81,29 @@ public class telaGerente extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 255));
 
+        jlNome.setText("jLabel1");
+
+        jlSobrenome.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jlNome)
+                .addGap(107, 107, 107)
+                .addComponent(jlSobrenome)
+                .addContainerGap(468, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlNome)
+                    .addComponent(jlSobrenome))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,6 +159,7 @@ public class telaGerente extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new telaGerente().setVisible(true);
+                inserirdados();
             }
         });
     }
@@ -147,5 +169,7 @@ public class telaGerente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jlNome;
+    private javax.swing.JLabel jlSobrenome;
     // End of variables declaration//GEN-END:variables
 }

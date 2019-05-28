@@ -13,6 +13,7 @@ import java.awt.event.WindowEvent;
 import java.sql.Connection;
 
 import static java.time.Clock.system;
+import java.util.ArrayList;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
@@ -200,7 +201,8 @@ public void windowClosing(WindowEvent e) {
             JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Login", JOptionPane.WARNING_MESSAGE);
             
         }else{
-          fDao.validar(login, senha, cargo);  
+          fDao.validar(login, senha, cargo); 
+       
          dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed

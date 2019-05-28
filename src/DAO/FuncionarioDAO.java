@@ -10,6 +10,7 @@ import Modelo.Funcionario;
 import Modelo.Piloto;
 import Modelo.Gerente;
 import Tela.telaGerente;
+import Tela.telaPiloto;
 import Tela.telaVendedor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,28 +48,7 @@ public class FuncionarioDAO extends ExecuteSQL{
             return e.getMessage();
         }
     }
-      public String Inserir_Endereco(String rua, String bairro, String estado,String cidade){
-        String ruaF, bairroF, estadoF, cidadeF;
-        ruaF = rua;
-        bairroF = bairro;
-        estadoF = estado;
-        cidadeF = cidade;
-        
-        
-        String sql = "INSERT INTO funcionario VALUES'"+ruaF+"'"+bairroF+"''"+estadoF+"''"+cidadeF+"'";
-        try {
-            PreparedStatement ps = getCon().prepareStatement(sql);
-            
-            
-            if(ps.executeUpdate() > 0){
-                return "Endereço  Cadastrado com Sucesso!";
-            }else{
-                return "Erro ao Cadastrar Endereço!";
-            }
-        } catch (Exception e) {
-            return e.getMessage();
-        }
-    }
+     
     
      public void Alterar_Funcionario(Funcionario f){
         String sql = "UPDATE funcionario SET nome = ?, login = ?, senha = ?"
@@ -92,8 +72,8 @@ public class FuncionarioDAO extends ExecuteSQL{
         }
     }
     
-    public List<Funcionario> ListaComboFuncionario(){
-        String sql = "SELECT nome FROM funcionario ORDER BY nome";
+    public List<Funcionario> ListaFuncionario(){
+        String sql = "SELECT * FROM funcionario";
         List<Funcionario> lista = new ArrayList<Funcionario>();
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
@@ -152,6 +132,9 @@ public class FuncionarioDAO extends ExecuteSQL{
                            break;
                      case "Vendedor" :  telaVendedor  v = new telaVendedor();
          v.setVisible(true); 
+                           break;
+                            case "Piloto" :  telaPiloto  p = new telaPiloto();
+         p.setVisible(true); 
                            break;
                }
            }
