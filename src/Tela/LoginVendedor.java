@@ -6,7 +6,10 @@
 package Tela;
 
 import DAO.Conexao;
+import DAO.FuncionarioDAO;
+import Modelo.Funcionario;
 import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -59,6 +62,11 @@ public class LoginVendedor extends javax.swing.JFrame {
         button1.setBackground(new java.awt.Color(0, 204, 204));
         button1.setForeground(new java.awt.Color(0, 51, 51));
         button1.setLabel("ENVIAR");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,6 +161,24 @@ public class LoginVendedor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+         Connection con = Conexao.AbrirConexao();
+        String login = tfEmail.getText();
+        String senha = pfSenha.getText();
+         FuncionarioDAO fDao = new FuncionarioDAO(con);
+         Funcionario f1 = new Funcionario();
+         String cargo = "Vendedor";
+        
+       
+        if (login.equals("") || senha.equals("") ) {
+            JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Login", JOptionPane.WARNING_MESSAGE);
+            
+        }else{
+          fDao.validar(login, senha, cargo);  
+         dispose();
+        }
+    }//GEN-LAST:event_button1ActionPerformed
 
     /**
      * @param args the command line arguments

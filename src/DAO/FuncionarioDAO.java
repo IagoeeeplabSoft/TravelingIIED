@@ -30,16 +30,10 @@ public class FuncionarioDAO extends ExecuteSQL{
     public FuncionarioDAO(Connection con) {
         super(con);
     }
-    public String Inserir_Funcionario(String nome, String sobrenome, String email,String senha,String telefone,String cpf){
-        String nomeF, sobrenomeF, loginF, senhaF, telefoneF, cpfF;
-        nomeF = nome;
-        sobrenomeF = sobrenome ;
-        loginF = email;
-        senhaF = senha;
-        telefoneF = telefone;
-        cpfF = cpf;
+    public String Inserir_Funcionario(FuncionarioDAO f){
         
-        String sql = "INSERT INTO funcionario VALUES'"+nomeF+"'"+sobrenomeF+"''"+loginF+"''"+senhaF+"''"+telefoneF+"''"+cpfF+"'";
+        
+        String sql = "INSERT INTO funcionario VALUES ";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             

@@ -6,7 +6,10 @@
 package Tela;
 
 import DAO.Conexao;
+import DAO.FuncionarioDAO;
+import Modelo.Funcionario;
 import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -154,8 +157,20 @@ public class LoginPiloto extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          Connection con = Conexao.AbrirConexao();
-        String email = tfEmail.getText();
+        String login = tfEmail.getText();
         String senha = pfSenha.getText();
+         FuncionarioDAO fDao = new FuncionarioDAO(con);
+         Funcionario f1 = new Funcionario();
+         String cargo = "Piloto";
+        
+       
+        if (login.equals("") || senha.equals("") ) {
+            JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Login", JOptionPane.WARNING_MESSAGE);
+            
+        }else{
+          fDao.validar(login, senha, cargo);  
+         dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
                                                
