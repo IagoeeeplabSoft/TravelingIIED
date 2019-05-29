@@ -84,6 +84,7 @@ public class EndereT extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         button1.setBackground(new java.awt.Color(0, 204, 204));
+        button1.setForeground(new java.awt.Color(0, 51, 51));
         button1.setLabel("ENVIAR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
