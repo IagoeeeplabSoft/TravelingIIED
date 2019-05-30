@@ -5,15 +5,44 @@
  */
 package Tela;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Traveling IIED
  */
 public class CadasDestino extends javax.swing.JFrame {
-
+  BufferedImage imagemBuffer=null;
+    ByteArrayOutputStream bytesImg = new ByteArrayOutputStream();
+    byte[] byteArray;
     /**
      * Creates new form CadasDestino
      */
+     public void getFoto() throws IOException{
+    JFileChooser buscar_foto = new JFileChooser();
+    buscar_foto.setFileFilter(new FileNameExtensionFilter("Imegem","bmp","png","jpg","jepg"));
+    buscar_foto.setAcceptAllFileFilterUsed(false);
+   
+   buscar_foto.setDialogTitle("Selecionar imagem");
+   buscar_foto.showOpenDialog(this);
+   String caminho = ""+buscar_foto.getSelectedFile().getAbsolutePath();
+   imagemBuffer = ImageIO.read(new File(caminho));
+   Image diminuirImagem = imagemBuffer.getScaledInstance(147, 143, 0);
+   lblFoto.setText("");
+   lblFoto.setIcon(new ImageIcon(diminuirImagem));
+   
+   
+    }
     public CadasDestino() {
         initComponents();
     }
@@ -154,4 +183,6 @@ public class CadasDestino extends javax.swing.JFrame {
     private javax.swing.JLabel lblFoto;
     private java.awt.TextField textField1;
     // End of variables declaration//GEN-END:variables
+
+    
 }
