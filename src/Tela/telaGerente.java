@@ -6,6 +6,7 @@
 package Tela;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -13,8 +14,11 @@ import java.util.ArrayList;
  */
 public class telaGerente extends javax.swing.JFrame {
   public static void inserirdados(){
-   
-   
+   ArrayList dados = new ArrayList();
+        Iterator it = dados.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
   }
     /**
      * Creates new form telaGerente
@@ -22,7 +26,12 @@ public class telaGerente extends javax.swing.JFrame {
     public telaGerente() {
         initComponents();
     }
-
+   
+    public String dados(){ 
+    ArrayList dados = new ArrayList();
+    
+    return null;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,6 +169,7 @@ public class telaGerente extends javax.swing.JFrame {
             public void run() {
                 new telaGerente().setVisible(true);
                 inserirdados();
+               inserirdados();
             }
         });
     }

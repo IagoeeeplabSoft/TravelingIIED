@@ -192,17 +192,24 @@ public void windowClosing(WindowEvent e) {
         Connection con = Conexao.AbrirConexao();
         String login = tfEmail.getText();
         String senha = pfSenha.getText();
-         FuncionarioDAO fDao = new FuncionarioDAO(con);
-         Funcionario f1 = new Funcionario();
+         FuncionarioDAO fDAO = new FuncionarioDAO(con);
+         Funcionario f = new Funcionario();
          String cargo = "Gerente";
+        f.setLogin(login);
+        f.setSenha(senha);
+        f.setCargo(cargo);
         
        
         if (login.equals("") || senha.equals("") ) {
             JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Login", JOptionPane.WARNING_MESSAGE);
             
         }else{
-          fDao.validar(login, senha, cargo); 
-       
+          fDAO.validar(login, senha, cargo); 
+          ArrayList dados = new ArrayList();
+       dados.add(login);
+       dados.add(senha);
+       dados.add(cargo);
+    
          dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed

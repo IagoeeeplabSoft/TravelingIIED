@@ -7,12 +7,14 @@ package Tela;
 
 import DAO.Conexao;
 import DAO.FuncionarioDAO;
+import Modelo.Funcionario;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -34,6 +36,40 @@ public class TelaCadastroF extends javax.swing.JFrame {
     public TelaCadastroF() {
         initComponents();
     }
+    public void salvar() throws IOException{
+        String nome, sobrenome, email, senha, telefone, cpf,cargo;
+        cargo = (String) jcbCargo.getSelectedItem();
+          nome = tfnome.getText();
+          sobrenome = tfsobrenome.getText();
+          email = tfemail.getText();
+          senha = tfsenha.getText();
+          telefone = tftelefone.getText();
+          cpf = tfcpf.getText();
+           if(nome.equals("")||sobrenome.equals("")||email.equals("")||senha.equals("")||telefone.equals("")||cpf.equals("")||cargo.equals("")){
+              JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Cadastro", JOptionPane.WARNING_MESSAGE);
+          }else{
+              
+          }
+        Connection con = Conexao.AbrirConexao();
+    Funcionario f = new Funcionario();
+    ImageIO.write(imagemBuffer, "jpg", bytesImg);
+    bytesImg.flush();
+    byteArray = bytesImg.toByteArray();
+    bytesImg.close();
+    f.setFoto(byteArray);
+    f.setNome(nome);
+    f.setSobrenome(sobrenome);
+    f.setTelefone(telefone);
+    f.setCargo(cargo);
+    f.setCpf(cpf);
+    f.setLogin(email);
+    f.setSenha(senha);
+       FuncionarioDAO fDAO = new FuncionarioDAO(con);
+       fDAO.Casatrar(f);
+       
+       this.dispose();
+    
+    }
     public void getFoto() throws IOException{
     JFileChooser buscar_foto = new JFileChooser();
     buscar_foto.setFileFilter(new FileNameExtensionFilter("Imegem","bmp","png","jpg","jepg"));
@@ -41,12 +77,13 @@ public class TelaCadastroF extends javax.swing.JFrame {
    
    buscar_foto.setDialogTitle("Selecionar imagem");
    buscar_foto.showOpenDialog(this);
+   if(buscar_foto.getSelectedFile() !=null){
    String caminho = ""+buscar_foto.getSelectedFile().getAbsolutePath();
    imagemBuffer = ImageIO.read(new File(caminho));
    Image diminuirImagem = imagemBuffer.getScaledInstance(147, 143, 0);
    lblFoto.setText("");
    lblFoto.setIcon(new ImageIcon(diminuirImagem));
-   
+   }
    
     }
    
@@ -367,28 +404,12 @@ public class TelaCadastroF extends javax.swing.JFrame {
     }//GEN-LAST:event_tftelefoneActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-          Connection con = Conexao.AbrirConexao();
-          FuncionarioDAO fDAO = new FuncionarioDAO(con);
-          String nome, sobrenome, email, senha, telefone, cpf,cargo;
-    
-          byte[] foto;
-          
-          cargo = (String) jcbCargo.getSelectedItem();
-          nome = tfnome.getText();
-          sobrenome = tfsobrenome.getText();
-          email = tfemail.getText();
-          senha = tfsenha.getText();
-          telefone = tftelefone.getText();
-          cpf = tfcpf.getText();
-          
-          if(nome.equals("")||sobrenome.equals("")||email.equals("")||senha.equals("")||telefone.equals("")||cpf.equals("")||cargo.equals("")){
-              JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "Cadastro", JOptionPane.WARNING_MESSAGE);
-          }else{
-              
-          }
-          
-          
-          
+               
+           try {
+            salvar();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaCadastroF.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_button1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -409,7 +430,11 @@ public class TelaCadastroF extends javax.swing.JFrame {
     }//GEN-LAST:event_lblFotoMouseClicked
 
     private void button1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button1MouseClicked
-   
+        try {
+            salvar();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaCadastroF.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_button1MouseClicked
 
     /**

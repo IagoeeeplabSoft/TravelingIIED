@@ -15,10 +15,9 @@ public class Funcionario {
    private String nome;
    private String sobrenome;
   private String telefone;
-   private  String endereco;
+
    private String cargo;
    private String cpf;
-   private double salario;
    private String login;
    private String senha;
 
@@ -70,13 +69,7 @@ public class Funcionario {
         this.telefone = telefone;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
+  
 
     public String getCargo() {
         return cargo;
@@ -94,25 +87,7 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-   private double functio (String cargo){
-       if (cargo =="Gerente"){
-       salario = 1.500;
-       }
-       if(cargo =="vendedor"){
-       salario = 998.00;
-       }
-       if(cargo == "Piloto"){
-       salario = 1.300;
-       }
-       return salario;
-   }
+   
      public byte[] getFoto() {
         return foto;
     }
