@@ -139,6 +139,7 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
          LoginGerente  g = new LoginGerente();
          g.setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
