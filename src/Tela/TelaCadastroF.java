@@ -65,7 +65,7 @@ public class TelaCadastroF extends javax.swing.JFrame {
     f.setLogin(email);
     f.setSenha(senha);
        FuncionarioDAO fDAO = new FuncionarioDAO(con);
-       fDAO.Casatrar(f);
+       fDAO.Cadastrar(f);
        
        this.dispose();
     

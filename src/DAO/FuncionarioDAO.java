@@ -31,7 +31,7 @@ public class FuncionarioDAO extends ExecuteSQL{
     public FuncionarioDAO(Connection con) {
         super(con);
     }
-    public String Casatrar(Funcionario f){
+    public String Cadastrar(Funcionario f){
         
         
         String sql = "INSERT INTO funcionario VALUES (0,?,?,?,?,?,?,?,?)";

@@ -5,16 +5,23 @@
  */
 package Tela;
 
+import DAO.Conexao;
+import DAO.DestinoDAO;
+import DAO.FuncionarioDAO;
+import Modelo.Distino;
+import Modelo.Funcionario;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -43,6 +50,27 @@ public class CadasDestino extends javax.swing.JFrame {
    
    
     }
+       public void salvar() throws IOException{
+        String nome, localizacao;
+        
+          nome = tfnome.getText();
+          localizacao = tflocalizacao.getText();
+          
+        Connection con = Conexao.AbrirConexao();
+    Distino d = new Distino();
+    ImageIO.write(imagemBuffer, "jpg", bytesImg);
+    bytesImg.flush();
+    byteArray = bytesImg.toByteArray();
+    bytesImg.close();
+    d.setFoto(byteArray);
+    d.setNome(nome);
+    d.setLocalizacao(localizacao);
+       DestinoDAO fDAO = new DestinoDAO(con);
+       fDAO.Cadastrar(d);
+       
+       this.dispose();
+    
+    }
     public CadasDestino() {
         initComponents();
     }
@@ -59,8 +87,12 @@ public class CadasDestino extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblFoto = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        textField1 = new java.awt.TextField();
+        tfnome = new java.awt.TextField();
+        jLabel3 = new javax.swing.JLabel();
+        button1 = new java.awt.Button();
+        tflocalizacao = new java.awt.TextField();
         jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -80,8 +112,16 @@ public class CadasDestino extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 51, 51));
         jLabel1.setText("NOME");
 
-        textField1.setForeground(new java.awt.Color(0, 51, 51));
-        textField1.setText("\n");
+        tfnome.setForeground(new java.awt.Color(0, 51, 51));
+        tfnome.setText("\n");
+
+        jLabel3.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel3.setText("LOCALIZAÇÃO");
+
+        button1.setBackground(new java.awt.Color(102, 255, 204));
+        button1.setLabel("ENVIAR\n");
+
+        tflocalizacao.setForeground(new java.awt.Color(0, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,17 +129,23 @@ public class CadasDestino extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                    .addComponent(tfnome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(tflocalizacao, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -107,8 +153,14 @@ public class CadasDestino extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                        .addComponent(tfnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tflocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
 
         getContentPane().add(jPanel1);
@@ -116,15 +168,23 @@ public class CadasDestino extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/LOCALIZACAO.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(198, 198, 198)
+                .addComponent(jLabel2)
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel2)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -177,11 +237,15 @@ public class CadasDestino extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button button1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblFoto;
-    private java.awt.TextField textField1;
+    private java.awt.TextField tflocalizacao;
+    private java.awt.TextField tfnome;
     // End of variables declaration//GEN-END:variables
 
     
