@@ -43,6 +43,7 @@ public class telaPiloto extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/employee.png"))); // NOI18N
         jLabel2.setText("  Viagens");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -53,6 +54,7 @@ public class telaPiloto extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/logout.png"))); // NOI18N
         jLabel3.setText("  sair");
         jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
