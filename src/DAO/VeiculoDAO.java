@@ -5,10 +5,16 @@
  */
 package DAO;
 
+import java.sql.Connection;
+
 /**
  *
  * @author José Iago
  */
-public class VeiculoDAO {
+public class VeiculoDAO extends ExecuteSQL{
+    
+    public VeiculoDAO(Connection con) {
+        super(con);
+    }
     
 }

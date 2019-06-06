@@ -5,19 +5,76 @@
  */
 package Tela;
 
+import DAO.Conexao;
+import DAO.VeiculoDAO;
+import Modelo.Veiculo;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author evani
  */
 public class CadastroVeiculo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroGerente
-     */
+   BufferedImage imagemBuffer=null;
+    ByteArrayOutputStream bytesImg = new ByteArrayOutputStream();
+    byte[] byteArray;
+    
     public CadastroVeiculo() {
         initComponents();
     }
-
+public void salvar() throws IOException{
+        String marca, tipo;
+        tipo = (String) jbcTipo.getSelectedItem();
+       marca = tfmarca.getText();
+       int lugares ;
+     //  lugares = tfLugares.getText();
+           
+        Connection con = Conexao.AbrirConexao();
+    Veiculo f = new Veiculo();
+    ImageIO.write(imagemBuffer, "jpg", bytesImg);
+    bytesImg.flush();
+    byteArray = bytesImg.toByteArray();
+    bytesImg.close();
+    f.setFoto(byteArray);
+    f.setTipo(tipo);
+    f.setMarca(marca);
+    
+   //f.setLugares(lugares);
+ 
+       VeiculoDAO fDAO = new VeiculoDAO(con);
+      // fDAO.Cadastrar(f);
+       
+       this.dispose();
+    
+    }
+    public void getFoto() throws IOException{
+    JFileChooser buscar_foto = new JFileChooser();
+    buscar_foto.setFileFilter(new FileNameExtensionFilter("Imegem","bmp","png","jpg","jepg"));
+    buscar_foto.setAcceptAllFileFilterUsed(false);
+   
+   buscar_foto.setDialogTitle("Selecionar imagem");
+   buscar_foto.showOpenDialog(this);
+   if(buscar_foto.getSelectedFile() !=null){
+   String caminho = ""+buscar_foto.getSelectedFile().getAbsolutePath();
+   imagemBuffer = ImageIO.read(new File(caminho));
+   Image diminuirImagem = imagemBuffer.getScaledInstance(147, 143, 0);
+   lblFoto.setText("");
+   lblFoto.setIcon(new ImageIcon(diminuirImagem));
+   }
+   
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,13 +87,13 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lblFoto = new javax.swing.JLabel();
-        tfnome = new java.awt.TextField();
+        tfmarca = new java.awt.TextField();
         button1 = new java.awt.Button();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
-        tfnome1 = new java.awt.TextField();
+        tfLugares = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
+        jbcTipo = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -53,7 +110,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         lblFoto.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         lblFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -65,11 +122,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
 
-        tfnome.setForeground(new java.awt.Color(0, 51, 51));
-        tfnome.setText("\n");
-        tfnome.addActionListener(new java.awt.event.ActionListener() {
+        tfmarca.setForeground(new java.awt.Color(0, 51, 51));
+        tfmarca.setText("\n");
+        tfmarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfnomeActionPerformed(evt);
+                tfmarcaActionPerformed(evt);
             }
         });
 
@@ -77,54 +134,47 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         button1.setForeground(new java.awt.Color(0, 0, 102));
         button1.setLabel("ENVIAR\n");
 
-        jCheckBox1.setBackground(new java.awt.Color(0, 0, 102));
-        jCheckBox1.setText("Ônibus");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setBackground(new java.awt.Color(0, 0, 102));
-        jCheckBox2.setText("Avião");
-
         jLabel1.setText("Marca");
 
-        tfnome1.setForeground(new java.awt.Color(0, 51, 51));
-        tfnome1.setText("\n");
-        tfnome1.addActionListener(new java.awt.event.ActionListener() {
+        tfLugares.setForeground(new java.awt.Color(0, 51, 51));
+        tfLugares.setText("\n");
+        tfLugares.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfnome1ActionPerformed(evt);
+                tfLugaresActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Poltrona");
+        jLabel2.setText("Poltronas");
+
+        jbcTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Ônibus", "Avião", " " }));
+
+        jLabel4.setText("Selecione o tipo de veiculo que séra cadastrado");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox2)
-                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(tfnome1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfLugares, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfnome, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfmarca, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jbcTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,18 +186,18 @@ public class CadastroVeiculo extends javax.swing.JFrame {
                         .addGap(8, 8, 8)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox2))
+                        .addComponent(tfmarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbcTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
                         .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tfnome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(tfLugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addGap(43, 43, 43))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 51));
@@ -178,8 +228,10 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,17 +252,13 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lblFotoMouseClicked
 
-    private void tfnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfnomeActionPerformed
+    private void tfmarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfmarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfnomeActionPerformed
+    }//GEN-LAST:event_tfmarcaActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void tfLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLugaresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void tfnome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfnome1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfnome1ActionPerformed
+    }//GEN-LAST:event_tfLugaresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,16 +298,16 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JComboBox<String> jbcTipo;
     private javax.swing.JLabel lblFoto;
-    private java.awt.TextField tfnome;
-    private java.awt.TextField tfnome1;
+    private java.awt.TextField tfLugares;
+    private java.awt.TextField tfmarca;
     // End of variables declaration//GEN-END:variables
 }

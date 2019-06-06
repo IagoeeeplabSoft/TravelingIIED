@@ -29,7 +29,7 @@ public class Veiculo {
         this.tipo = tipo;
     }
  private String marca;
- private int[] lugares ;
+ private int lugares ;
 
     public String getMarca() {
         return marca;
@@ -39,11 +39,11 @@ public class Veiculo {
         this.marca = marca;
     }
 
-    public int[] getLugares() {
+    public int getLugares() {
         return lugares;
     }
 
-    public void setLugares(int[] lugares) {
+    public void setLugares(int lugares) {
         this.lugares = lugares;
     }
  

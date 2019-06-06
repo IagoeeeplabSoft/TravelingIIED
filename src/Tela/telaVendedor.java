@@ -5,6 +5,8 @@
  */
 package Tela;
 
+import Principal.Menu;
+
 /**
  *
  * @author José Iago
@@ -142,7 +144,8 @@ public class telaVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        //Sair
+         Menu m = new Menu();
+        m.setVisible(true);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**

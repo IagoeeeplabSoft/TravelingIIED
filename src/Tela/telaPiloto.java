@@ -5,6 +5,8 @@
  */
 package Tela;
 
+import Principal.Menu;
+
 /**
  *
  * @author José Iago
@@ -121,7 +123,8 @@ public class telaPiloto extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        //Sair
+          Menu m = new Menu();
+        m.setVisible(true);
         
     }//GEN-LAST:event_jLabel3MouseClicked
 
