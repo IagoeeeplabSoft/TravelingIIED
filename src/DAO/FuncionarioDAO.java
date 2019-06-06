@@ -41,11 +41,11 @@ public class FuncionarioDAO extends ExecuteSQL{
               ps.setString(2, f.getNome());
             ps.setString(3, f.getSobrenome());
             ps.setString(4, f.getTelefone());
-             ps.setString(5, f.getCpf());
-            ps.setString(5, f.getCpf());
-            ps.setString(6, f.getCargo());
+             ps.setString(5, f.getCargo());
+            ps.setString(6, f.getCpf());
             ps.setString(7, f.getLogin());
             ps.setString(8, f.getSenha());
+            
              return "Funcionario Cadastrado com Sucesso!";
             
         } catch (Exception e) {
