@@ -19,7 +19,7 @@ public DestinoDAO(Connection con) {
         super(con);
     }
        public String Cadastrar(Distino d){
-        String sql = "INSERT INTO Destinos VALUES (0,?,?)";
+        String sql = "INSERT INTO Destinos VALUES (0,?,?,?)";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
                 ps.setBytes(1, d.getFoto());

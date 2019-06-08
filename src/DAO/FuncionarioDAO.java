@@ -40,13 +40,18 @@ public class FuncionarioDAO extends ExecuteSQL{
                 ps.setBytes(1, f.getFoto());
               ps.setString(2, f.getNome());
             ps.setString(3, f.getSobrenome());
-            ps.setString(4, f.getTelefone());
-             ps.setString(5, f.getCargo());
-            ps.setString(6, f.getCpf());
+            ps.setString(4, f.getTelefone()); 
+            ps.setString(5, f.getCpf());
+           
+             ps.setString(6, f.getCargo());
             ps.setString(7, f.getLogin());
             ps.setString(8, f.getSenha());
             
-             return "Funcionario Cadastrado com Sucesso!";
+           if(ps.executeUpdate() > 0){
+                return "Funcionario Cadastrado com Sucesso!";
+            }else{
+                return "Erro ao Cadastrar Funcionario!";
+            }
             
         } catch (Exception e) {
             return e.getMessage();
@@ -150,39 +155,35 @@ public class FuncionarioDAO extends ExecuteSQL{
         }
     }
            
-    public  List<Funcionario> Perfil(Funcionario f) {
-        String login, senha, cargo;
-        login = f.getLogin();
-        senha = f.getSenha();
-        cargo = f.getCargo();
-           String sql = "SELECT * FROM funcionario WHERE login =? AND senha = ? AND cargo = ? ";
-           List<Funcionario> lista = new ArrayList<Funcionario>();
-    
-       try {
+    public List<Funcionario> perfil(String login){
+        String l = login;
+        String sql = "SELECT foto,nome,sobrenome, telefone,login,senha FROM funcionario WHERE login ='"+l+"'";
+        List<Funcionario> lista = new ArrayList<Funcionario>();
+        
+        try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             
             if(rs != null){
                 while(rs.next()){
-                    Funcionario fu = new Funcionario();
-                   // fu.setFoto(rs.getByte[]);
-                    fu.setNome(rs.getString(2));
-                    fu.setSobrenome(rs.getString(3));
-                    fu.setTelefone(rs.getString(4));
-                    fu.setCargo(rs.getString(5));
-                    fu.setCpf(rs.getString(6));
-                    fu.setLogin(rs.getString(7));
-                    fu.setSenha(rs.getString(8));
+                    Funcionario f = new Funcionario();
+                    f.setFoto(rs.getBytes(1));
+                    f.setNome(rs.getString(2));
+                    f.setSobrenome(rs.getString(3));
+                    f.setTelefone(rs.getString(4));
+                    f.setLogin(rs.getString(5));
+                    f.setSenha(rs.getString(6));
                     
-                    lista.add(fu);
+                    lista.add(f);
                 }
-                return lista;
+            return lista;
             }else{
                 return null;
             }
         } catch (Exception e) {
             return null;
         }
+        
     }
 }
 

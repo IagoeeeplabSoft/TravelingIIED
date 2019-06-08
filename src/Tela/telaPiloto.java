@@ -125,6 +125,7 @@ public class telaPiloto extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
           Menu m = new Menu();
         m.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_jLabel3MouseClicked
 

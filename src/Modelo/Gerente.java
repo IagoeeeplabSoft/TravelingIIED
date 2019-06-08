@@ -10,11 +10,11 @@ package Modelo;
  * @author Traveling IIED
  */
 public class  Gerente extends Funcionario {
-    private String login;
+    public String login;
     private String senha;
     
 
-    public String getLogin() {
+    public String getLogin(String login) {
         return login;
     }
 
@@ -22,7 +22,7 @@ public class  Gerente extends Funcionario {
         this.login = login;
     }
 
-    public String getSenha() {
+    public String getSenha(String senha) {
         return senha;
     }
 

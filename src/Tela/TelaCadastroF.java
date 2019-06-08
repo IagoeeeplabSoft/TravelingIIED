@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -56,14 +57,24 @@ public class TelaCadastroF extends javax.swing.JFrame {
     f.setNome(nome);
     f.setSobrenome(sobrenome);
     f.setTelefone(telefone);
-    f.setCargo(cargo);
     f.setCpf(cpf);
+    f.setCargo(cargo);
+   
     f.setLogin(email);
     f.setSenha(senha);
        FuncionarioDAO fDAO = new FuncionarioDAO(con);
        
-       fDAO.Cadastrar(f);
+       JOptionPane.showMessageDialog(null,fDAO.Cadastrar(f) );
        
+   tfnome.setText("");
+   tfsobrenome.setText("");
+   tfemail.setText("");
+   tfsenha.setText("");
+   tfcpf.setText("");
+   tftelefone.setText("");
+   lblFoto.setText("");
+   jcbCargo.setSelectedItem("");
+   
    
     
     }
@@ -486,6 +497,7 @@ public class TelaCadastroF extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaCadastroF().setVisible(true);
+               
             }
         });
     }

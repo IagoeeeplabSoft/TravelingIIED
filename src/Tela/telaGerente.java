@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Iterator;
+import javax.swing.JFrame;
 /**
  *
  * @author José Iago
@@ -27,16 +28,13 @@ public class telaGerente extends javax.swing.JFrame {
      */
     public telaGerente() {
         this.setTitle("Tela do gerente");
-        this.setLocationRelativeTo(null);
-        centralizarComponente();
+
         initComponents();
+        setLocationRelativeTo( null );
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+     
     }
-   public void centralizarComponente() { Dimension ds = Toolkit.getDefaultToolkit().getScreenSize(); Dimension dw = getSize(); setLocation((ds.width - dw.width) / 2, (ds.height - dw.height) / 2); }
-    public String dados(){ 
-    ArrayList dados = new ArrayList();
-    
-    return null;
-    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,6 +66,9 @@ public class telaGerente extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela do gerente ");
+        setAlwaysOnTop(true);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
@@ -206,12 +207,14 @@ public class telaGerente extends javax.swing.JFrame {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         Perfil p = new  Perfil();
         p.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jlSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlSairMouseClicked
         Menu m = new Menu();
         m.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jlSairMouseClicked
 
     /**
@@ -244,8 +247,16 @@ public class telaGerente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new telaGerente().setVisible(true);
+                telaGerente tela = new telaGerente();
+                
+               tela.setLocationRelativeTo(null); 
+                tela.setVisible(true);
+    
+   
                
+       
+   
+  
             }
         });
     }

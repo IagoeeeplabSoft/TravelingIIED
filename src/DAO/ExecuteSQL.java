@@ -10,7 +10,7 @@ import java.sql.*;
  * @author Traveling IIED
  */
 public class ExecuteSQL {
-      private Connection con;
+      Connection con;
     
     public ExecuteSQL(Connection con){
         setCon(con);
