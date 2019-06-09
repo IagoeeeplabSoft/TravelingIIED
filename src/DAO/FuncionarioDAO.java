@@ -133,7 +133,7 @@ public class FuncionarioDAO extends ExecuteSQL{
            ResultSet rs = st.executeQuery(sql);
            if(rs.next()){
            resultado = 1;
-           if(resultado == 1){
+          /* if(resultado == 1){
                
                switch(c){
                    case "Gerente" :  telaGerente  g = new telaGerente();
@@ -146,7 +146,7 @@ public class FuncionarioDAO extends ExecuteSQL{
          p.setVisible(true); 
                            break;
                }
-           }
+           }*/
            }else{
            JOptionPane.showMessageDialog(null, "Erro Usuario não cadastrado ");
            }

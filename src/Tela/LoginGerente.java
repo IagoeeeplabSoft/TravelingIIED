@@ -194,10 +194,12 @@ public void windowClosing(WindowEvent e) {
           fDAO.validar(login, senha, cargo); 
           ArrayList <Gerente>dados = new ArrayList<Gerente>();
           Gerente g = new Gerente();
+          telaGerente g1 = new telaGerente();
        g.getLogin(login);
        g.getSenha(senha);
        dados.add(g);
-       
+       g1.exportarNome(f);
+       g1.setVisible(true);
        
     
          dispose();
@@ -254,7 +256,5 @@ public void windowClosing(WindowEvent e) {
     private javax.swing.JTextField tfEmail;
     // End of variables declaration//GEN-END:variables
 
-    private FuncionarioDAO FuncionarioDAO(Connection con1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }
