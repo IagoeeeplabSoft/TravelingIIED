@@ -124,15 +124,15 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addContainerGap(152, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(34, 34, 34)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel3)
-                .addGap(27, 27, 27)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel5)
-                .addGap(36, 36, 36)
+                .addGap(30, 30, 30)
                 .addComponent(jlSair)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addGap(58, 58, 58))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -157,7 +157,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        TelaListaF lf = new TelaListaF();
+        TelaListarF lf = new TelaListarF();
         lf.setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
 

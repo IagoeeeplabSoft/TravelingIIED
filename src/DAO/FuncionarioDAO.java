@@ -80,9 +80,60 @@ public class FuncionarioDAO extends ExecuteSQL{
            e.getMessage();
         }
     }
+       public void Promover(Funcionario f){
+        String sql = "UPDATE funcionario SET Cargo = ?"
+                + "WHERE codigo = ?";
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+             ps.setString(1, f.getCargo());
+            ps.setString(2, f.getSobrenome());
+            ps.setString(3, f.getTelefone());
+          
+            ps.setString(5, f.getCargo());
+            ps.setString(6, f.getCpf());
+            
+            if(ps.executeUpdate() > 0){
+                JOptionPane.showMessageDialog(null,"Funcionario Atualizado com Sucesso!");
+            }else{
+                JOptionPane.showMessageDialog(null,"Erro ao Atualizar o Funcionário!");
+            }
+        } catch (Exception e) {
+           e.getMessage();
+        }
+    }
+       public Funcionario Consultar(int cod){
+        int c = cod;
+         Funcionario f = new Funcionario();
+         
+        try {
+            
+            String sql = "SELECT id,cargo FROM funcionario WHERE id =  "+c+"";
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+           
+            
+            if(rs != null){
+                while(rs.next()){
+                                      
+                    f.setCodigo(rs.getInt(1));
+                    f.setCargo(rs.getString(2));
+                    
+                    
+                }
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        if(f.getCodigo() == cod){
+            JOptionPane.showMessageDialog(null, "Funcionário encontrado com sucesso!");
+        }else{
+        JOptionPane.showMessageDialog(null, "Funcionário Não encontrado");    
+        }
+        return f;
+    }
     
     public List<Funcionario> ListaFuncionario(){
-        String sql = "SELECT * FROM funcionario";
+        String sql = "SELECT id, nome,sobrenome,telefone,cpf,cargo,login,senha FROM funcionario";
         List<Funcionario> lista = new ArrayList<Funcionario>();
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
@@ -91,7 +142,14 @@ public class FuncionarioDAO extends ExecuteSQL{
             if(rs != null){
                 while(rs.next()){
                     Funcionario f = new Funcionario();
-                    f.setNome(rs.getString(1));
+                     f.setCodigo(rs.getInt(1));
+                    f.setNome(rs.getString(2));
+                    f.setSobrenome(rs.getString(3));
+                    f.setTelefone(rs.getString(4));
+                    f.setCpf(rs.getString(5));
+                    f.setCargo(rs.getString(6));
+                    f.setLogin(rs.getString(7));
+                    f.setSenha(rs.getString(8));
                     lista.add(f);
                 }
                 return lista;
@@ -184,6 +242,66 @@ public class FuncionarioDAO extends ExecuteSQL{
             return null;
         }
         
+    }
+     public List<Funcionario> Pesquisar_Nome_Funcionario(String nome){
+        String sql = "SELECT id, nome,sobrenome,telefone,cpf,cargo,login,senha FROM funcionario WHERE nome LIKE '" + nome + "%'";
+        List<Funcionario> lista = new ArrayList<Funcionario>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Funcionario f = new Funcionario();
+                      f.setCodigo(rs.getInt(1));
+                    f.setNome(rs.getString(2));
+                    f.setSobrenome(rs.getString(3));
+                    f.setTelefone(rs.getString(4));
+                    f.setCpf(rs.getString(5));
+                    f.setCargo(rs.getString(6));
+                    f.setLogin(rs.getString(7));
+                    f.setSenha(rs.getString(8));
+                    
+                    lista.add(f);
+                }
+            return lista;
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
+     public List<Funcionario> Pesquisar_Cod_Funcionario(int codigo){
+        String sql = "SELECT  id, nome,sobrenome,telefone,cpf,cargo,login,senha FROM funcionario WHERE codigo = '" + codigo + "'" ;
+        List<Funcionario> lista = new ArrayList<Funcionario>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Funcionario f = new Funcionario();
+                    f.setCodigo(rs.getInt(1));
+                    f.setNome(rs.getString(2));
+                    f.setSobrenome(rs.getString(3));
+                    f.setTelefone(rs.getString(4));
+                    f.setCpf(rs.getString(5));
+                    f.setCargo(rs.getString(6));
+                    f.setLogin(rs.getString(7));
+                    f.setSenha(rs.getString(8));
+                    
+                    lista.add(f);
+                }
+            return lista;
+            }else{
+                return null;
+            }
+        } catch (Exception e){
+            return null;
+        }
     }
 }
 
