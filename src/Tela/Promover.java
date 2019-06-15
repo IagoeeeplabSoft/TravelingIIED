@@ -22,6 +22,7 @@ public class Promover extends javax.swing.JFrame {
      */
     public Promover() {
         initComponents();
+        setTitle("Promover");
     }
 
     /**
@@ -137,6 +138,7 @@ String codigo = codigoAlterar.getText();
         int cod = Integer.parseInt(codigo);
         
         Funcionario f = sql.Consultar(cod);
+        String senhaC = f.getSenha();
         if( f.getCodigo() != cod){
             Conexao.FecharConexao(con);
         }
@@ -154,9 +156,9 @@ String codigo = codigoAlterar.getText();
         
         
       
-        Cargo.setText(f.getCargo());
-        codigoAlterar.setText("" + f.getCodigo());
         
+        codigoAlterar.setText("" + f.getCodigo());
+        Cargo.setText(f.getCargo());
         
         Conexao.FecharConexao(con);       
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -176,11 +178,21 @@ String codigo = codigoAlterar.getText();
             Funcionario f = new Funcionario();
             
             f.setCargo(cargo);
+            String senhaB = f.getSenha();
             
+            String senhac = JOptionPane.showInputDialog("Digite sua senha");
+            if(senhaB == senhac){
             sql.Promover(f);
             Conexao.FecharConexao(con);
-            
             Cargo.setText("");
+            }else{
+           System.out.print(senhaB);
+            JOptionPane.showMessageDialog(null, "Senha errada tente novamente");      
+            }
+            
+            
+            
+            
             
             
             
