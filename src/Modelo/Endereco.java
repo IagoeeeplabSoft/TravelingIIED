@@ -47,5 +47,10 @@ private String estado;
         this.estado = estado;
     }
 
+    @Override
+    public String toString() {
+        return getCidade(); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }

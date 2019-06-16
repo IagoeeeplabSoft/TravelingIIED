@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author José Iago
  */
-public class Distino {
+public class Destino {
     private String nome;
     private byte[] foto;
     private String localizacao;

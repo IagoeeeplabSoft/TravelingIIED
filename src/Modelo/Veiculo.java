@@ -10,6 +10,15 @@ package Modelo;
  * @author José Iago
  */
 public class Veiculo {
+    private int codigo;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
     private byte[] foto;
     private String tipo;
 

@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import Modelo.Distino;
+import Modelo.Destino;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -18,7 +18,9 @@ public class DestinoDAO extends ExecuteSQL{
 public DestinoDAO(Connection con) {
         super(con);
     }
-       public String Cadastrar(Distino d){
+
+   
+       public String Cadastrar(Destino d){
         String sql = "INSERT INTO Destinos VALUES (0,?,?,?)";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
@@ -31,6 +33,10 @@ public DestinoDAO(Connection con) {
         } catch (Exception e) {
             return e.getMessage();
         }
+    }
+
+    public Iterable<Destino> read() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

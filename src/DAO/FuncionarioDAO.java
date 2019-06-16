@@ -107,7 +107,7 @@ public class FuncionarioDAO extends ExecuteSQL{
          
         try {
             
-            String sql = "SELECT id,cargo FROM funcionario WHERE id =  "+c+"";
+            String sql = "SELECT id,cargo, senha FROM funcionario WHERE id =  "+c+"";
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
            
@@ -117,7 +117,7 @@ public class FuncionarioDAO extends ExecuteSQL{
                                       
                     f.setCodigo(rs.getInt(1));
                     f.setCargo(rs.getString(2));
-                    
+                    f.setSenha(rs.getString(3));
                     
                 }
             }

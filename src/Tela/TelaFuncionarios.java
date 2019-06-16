@@ -124,9 +124,9 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(152, Short.MAX_VALUE)
+                .addContainerGap(170, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(55, 55, 55)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel3)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel5)

@@ -99,7 +99,7 @@ public class EditarD extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String codigo = jTF_pesquisar_cod_funcionario.getText();
+       /* String codigo = jTF_pesquisar_cod_funcionario.getText();
         Connection con = Conexao.AbrirConexao();
         FuncionarioDAO sql = new FuncionarioDAO(con);
 
@@ -128,6 +128,7 @@ public class EditarD extends javax.swing.JFrame {
         jTF_alterar_senha_funcionario.setText(f.getSenha());
 
         Conexao.FecharConexao(con);
+        */
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

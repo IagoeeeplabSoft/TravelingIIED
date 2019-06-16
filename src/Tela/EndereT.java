@@ -5,6 +5,11 @@
  */
 package Tela;
 
+import DAO.EnderecoDAO;
+import Modelo.Endereco;
+import DAO.Conexao;
+import java.sql.Connection;
+
 /**
  *
  * @author Traveling IIED
@@ -16,8 +21,34 @@ public class EndereT extends javax.swing.JFrame {
      */
     public EndereT() {
         initComponents();
+         Estado();
+        listaCidade();
     }
-
+     public void listaCidade(){
+         Connection con = Conexao.AbrirConexao();
+           EnderecoDAO d = new EnderecoDAO(con);
+         
+        for(Endereco def: d.Cidades()){
+        cbCidade.addItem(def);
+    }
+        
+   }
+    public void Estado(){
+         Connection con = Conexao.AbrirConexao();
+           EnderecoDAO d = new EnderecoDAO(con);
+      String estado; 
+        for(Endereco de: d.Estados()){
+        cbEstado.addItem(de);
+       
+        }
+        
+    
+               estado =  (String) cbEstado.getSelectedItem();
+         
+    }
+  
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,11 +67,10 @@ public class EndereT extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        estado = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbEstado = new javax.swing.JComboBox<>();
+        cbCidade = new javax.swing.JComboBox<>();
         button1 = new java.awt.Button();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,18 +100,17 @@ public class EndereT extends javax.swing.JFrame {
         jTextField2.setBackground(new java.awt.Color(204, 255, 255));
         jTextField2.setForeground(new java.awt.Color(0, 51, 51));
 
-        estado.setBackground(new java.awt.Color(204, 255, 255));
-        estado.setForeground(new java.awt.Color(0, 51, 51));
-        estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Paraná", "Paraíba", "Pará", "Pernambuco", "Piauí", "Rio Grande do Norte", "Rio Grande do Sul", "Rio de Janeiro", "Rondônia", "Roraima", "Santa Catarina", "Sergipe", "São Paulo", "Tocantins", " " }));
-        estado.addActionListener(new java.awt.event.ActionListener() {
+        cbEstado.setBackground(new java.awt.Color(204, 255, 255));
+        cbEstado.setForeground(new java.awt.Color(0, 51, 51));
+        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cbEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estadoActionPerformed(evt);
+                cbEstadoActionPerformed(evt);
             }
         });
 
-        jComboBox2.setBackground(new java.awt.Color(204, 255, 255));
-        jComboBox2.setForeground(new java.awt.Color(0, 51, 51));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbCidade.setBackground(new java.awt.Color(204, 255, 255));
+        cbCidade.setForeground(new java.awt.Color(0, 51, 51));
 
         button1.setBackground(new java.awt.Color(0, 204, 204));
         button1.setForeground(new java.awt.Color(0, 51, 51));
@@ -108,8 +137,9 @@ public class EndereT extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                                 .addComponent(jTextField2))
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cbCidade, javax.swing.GroupLayout.Alignment.LEADING, 0, 112, Short.MAX_VALUE)
+                                .addComponent(cbEstado, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 201, Short.MAX_VALUE)
@@ -137,11 +167,11 @@ public class EndereT extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel6)
                 .addGap(16, 16, 16)
-                .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
@@ -149,23 +179,15 @@ public class EndereT extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(123, 239, 178));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/icons8-endereço-50.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(252, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(258, 258, 258))
+            .addGap(0, 560, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(41, 41, 41))
+            .addGap(0, 102, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,9 +208,9 @@ public class EndereT extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoActionPerformed
+    private void cbEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoActionPerformed
         
-    }//GEN-LAST:event_estadoActionPerformed
+    }//GEN-LAST:event_cbEstadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,12 +249,11 @@ public class EndereT extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
-    private javax.swing.JComboBox<String> estado;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<Object> cbCidade;
+    private javax.swing.JComboBox<Object> cbEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -241,4 +262,6 @@ public class EndereT extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+   
 }

@@ -8,7 +8,7 @@ package Tela;
 import DAO.Conexao;
 import DAO.DestinoDAO;
 import DAO.FuncionarioDAO;
-import Modelo.Distino;
+import Modelo.Destino;
 import Modelo.Funcionario;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -57,7 +57,7 @@ public class CadasDestino extends javax.swing.JFrame {
           localizacao = tflocalizacao.getText();
           
         Connection con = Conexao.AbrirConexao();
-    Distino d = new Distino();
+    Destino d = new Destino();
     ImageIO.write(imagemBuffer, "jpg", bytesImg);
     bytesImg.flush();
     byteArray = bytesImg.toByteArray();
@@ -94,7 +94,7 @@ public class CadasDestino extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));

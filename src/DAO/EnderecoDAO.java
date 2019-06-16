@@ -5,8 +5,13 @@
  */
 package DAO;
 
+import Modelo.Endereco;
+import Modelo.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -37,5 +42,59 @@ public class EnderecoDAO  extends ExecuteSQL{
         } catch (Exception e) {
             return e.getMessage();
         }
+    }
+      public List<Endereco> Cidades(){
+    //String es  = estado ;
+        String sql = "SELECT nome FROM cidade WHERE estado ";
+        List<Endereco> lista = new ArrayList<Endereco>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Endereco f = new Endereco();
+                    
+                    f.setCidade(rs.getString(1));
+                    
+                    
+                    lista.add(f);
+                }
+            return lista;
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        
+    }
+      public List<Endereco> Estados(){
+       
+        String sql = "SELECT nome FROM estado ";
+        List<Endereco> lista = new ArrayList<Endereco>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Endereco f = new Endereco();
+                    
+                    f.setEstado(rs.getString(1));
+                    
+                    
+                    lista.add(f);
+                }
+            return lista;
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        
     }
 }
