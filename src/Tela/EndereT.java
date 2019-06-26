@@ -8,6 +8,9 @@ package Tela;
 import DAO.EnderecoDAO;
 import Modelo.Endereco;
 import DAO.Conexao;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import java.sql.Connection;
 
 /**
@@ -21,6 +24,9 @@ public class EndereT extends javax.swing.JFrame {
      */
     public EndereT() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
          Estado();
         listaCidade();
     }

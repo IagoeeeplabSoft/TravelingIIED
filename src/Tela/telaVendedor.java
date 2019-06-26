@@ -6,6 +6,9 @@
 package Tela;
 
 import Principal.Menu;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 
 /**
  *
@@ -17,6 +20,9 @@ public class telaVendedor extends javax.swing.JFrame {
      * Creates new form telaVendedor
      */
     public telaVendedor() {
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
         initComponents();
     }
 
@@ -47,7 +53,7 @@ public class telaVendedor extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/employee.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/airplane.png"))); // NOI18N
         jLabel2.setText("Vender Passagens ");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,7 +64,7 @@ public class telaVendedor extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/student.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/student.png"))); // NOI18N
         jLabel3.setText("Perfil");
         jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,7 +75,7 @@ public class telaVendedor extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/logout.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logout.png"))); // NOI18N
         jLabel4.setText("Sair");
         jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {

@@ -5,36 +5,49 @@
  */
 package Tela;
 
+import DAO.Conexao;
 import Modelo.Funcionario;
 import Modelo.Gerente;
 import Principal.Menu;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import DAO.FuncionarioDAO;
+import java.io.ByteArrayInputStream;
+import java.net.URL;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 /**
  *
  * @author José Iago
  */
 public class telaGerente extends javax.swing.JFrame {
-  public static void inserirdados(){
-   ArrayList dados = new ArrayList();
-        Iterator it = dados.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-        }
-  }
+  
     /**
      * Creates new form telaGerente
      */
-    public telaGerente() {
+    public telaGerente(){
         this.setTitle("Tela do gerente");
-
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
+ 
         initComponents();
-        setLocationRelativeTo( null );
+         
+       
+          setLocationRelativeTo( null );
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        ArrayList<Gerente> dados = new ArrayList<Gerente>();
+     
         
      
     }
@@ -42,6 +55,24 @@ public class telaGerente extends javax.swing.JFrame {
        jlLogin.setText(f.getLogin());
        
    }
+     public void getFotoPerfil() throws IOException, SQLException, ClassNotFoundException{
+       BufferedImage imagemBuffer=null;
+   
+         imagemBuffer = null;
+         Connection con = Conexao.AbrirConexao();
+         FuncionarioDAO sql = new FuncionarioDAO (con);
+         for(Funcionario f1: sql.getFoto(jlLogin.getText())){
+         if(f1 !=null ){
+              ByteArrayOutputStream bytesImg = new ByteArrayOutputStream();
+    byte[] byteArray;
+         imagemBuffer = ImageIO.read(new ByteArrayInputStream(f1.getFoto()));
+         Image diminuirImagem = imagemBuffer.getScaledInstance(207, 188, 0);
+   lblFoto.setText("");
+   lblFoto.setIcon(new ImageIcon(diminuirImagem));
+         }else{}
+         }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,7 +104,7 @@ public class telaGerente extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela do gerente ");
         setAlwaysOnTop(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -87,7 +118,7 @@ public class telaGerente extends javax.swing.JFrame {
         lblFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/icons8-gerente-26.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/student.png"))); // NOI18N
         jLabel2.setText(" Funcionário");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,7 +128,7 @@ public class telaGerente extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/airplane.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/airplane.png"))); // NOI18N
         jLabel3.setText("   Veiculo");
         jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,7 +138,7 @@ public class telaGerente extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/beach.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/beach.png"))); // NOI18N
         jLabel4.setText(" Destino");
         jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -130,7 +161,7 @@ public class telaGerente extends javax.swing.JFrame {
         );
 
         jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/student.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-gerente-26.png"))); // NOI18N
         jLabel5.setText("   Perfil");
         jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -140,7 +171,7 @@ public class telaGerente extends javax.swing.JFrame {
         });
 
         jlSair.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/logout.png"))); // NOI18N
+        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logout.png"))); // NOI18N
         jlSair.setText("Sair");
         jlSair.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jlSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,13 +191,14 @@ public class telaGerente extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jlLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jlSair, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlSair, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,20 +241,25 @@ public class telaGerente extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         TelaFuncionarios f1 = new TelaFuncionarios ();
         f1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
      TelaVeiculos ve = new TelaVeiculos();
      ve.setVisible(true);
+     this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         TelaDestino de = new TelaDestino();
      de.setVisible(true);
+     this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         Perfil p = new  Perfil();
+        String login = jlLogin.getText();
+        p.exportarNome(login);
         p.setVisible(true);
         this.dispose();
         
@@ -266,8 +303,7 @@ public class telaGerente extends javax.swing.JFrame {
             public void run() {
                 telaGerente tela = new telaGerente();
                 
-               tela.setLocationRelativeTo(null); 
-                tela.setVisible(true);
+              
                 
    
                

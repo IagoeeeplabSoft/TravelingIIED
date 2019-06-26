@@ -96,7 +96,7 @@
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/Img/icons1/employee.png"/>
+              <Image iconType="3" name="/Img/airplane.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Vender Passagens "/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -118,7 +118,7 @@
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/Img/icons1/student.png"/>
+              <Image iconType="3" name="/Img/student.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Perfil"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -140,7 +140,7 @@
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/Img/icons1/logout.png"/>
+              <Image iconType="3" name="/Img/logout.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sair"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

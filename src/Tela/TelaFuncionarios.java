@@ -6,6 +6,11 @@
 package Tela;
 
 import Principal.Menu;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
 
 /**
  *
@@ -18,8 +23,11 @@ public class TelaFuncionarios extends javax.swing.JFrame {
      */
     public TelaFuncionarios() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
     }
-
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,7 +61,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/employee.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/employee.png"))); // NOI18N
         jLabel2.setText("Cadastrar Funcionario ");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -63,7 +71,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/bullet.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/bullet.png"))); // NOI18N
         jLabel3.setText("Listar Funcioanrio ");
         jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -86,7 +94,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         );
 
         jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/promotion.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/promotion.png"))); // NOI18N
         jLabel5.setText("Promever Funcionario ");
         jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,7 +104,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         });
 
         jlSair.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/logout.png"))); // NOI18N
+        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logout.png"))); // NOI18N
         jlSair.setText("Voltar Para a tela do gerente ");
         jlSair.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jlSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,7 +132,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
+                .addContainerGap(122, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel3)

@@ -7,6 +7,9 @@ package Tela;
 import DAO.Conexao;
 import DAO.DestinoDAO;
 import Modelo.Destino;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 /**
  *
  * @author Traveling IIED
@@ -18,6 +21,9 @@ public class Passagem extends javax.swing.JFrame {
      */
     public Passagem() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
        
     }
   

@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import Modelo.Endereco;
 import java.sql.Connection;
 import Modelo.Funcionario;
 import Modelo.Piloto;
@@ -302,6 +303,33 @@ public class FuncionarioDAO extends ExecuteSQL{
         } catch (Exception e){
             return null;
         }
+    }
+      public List<Funcionario> getFoto(String login)throws  SQLException, ClassNotFoundException{
+       String l = login;
+        String sql = "SELECT foto FROM funcionario WHERE login = '"+l+"' ";
+        List<Funcionario> lista = new ArrayList<Funcionario>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Funcionario f = new Funcionario();
+                    
+                    f.setFoto(rs.getBytes(1));
+                    
+                    
+                    lista.add(f);
+                }
+            return lista;
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        
     }
 }
 

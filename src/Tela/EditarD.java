@@ -5,6 +5,10 @@
  */
 package Tela;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+
 /**
  *
  * @author José Iago
@@ -16,6 +20,9 @@ public class EditarD extends javax.swing.JFrame {
      */
     public EditarD() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
     }
 
     /**

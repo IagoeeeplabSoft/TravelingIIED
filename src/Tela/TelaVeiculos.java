@@ -5,6 +5,10 @@
  */
 package Tela;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+
 /**
  *
  * @author José Iago
@@ -16,6 +20,9 @@ public class TelaVeiculos extends javax.swing.JFrame {
      */
     public TelaVeiculos() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
     }
 
     /**
@@ -39,7 +46,7 @@ public class TelaVeiculos extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/add.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/add.png"))); // NOI18N
         jLabel2.setText("Cadastrar Veiculo");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -49,7 +56,7 @@ public class TelaVeiculos extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/bullet.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/bullet.png"))); // NOI18N
         jLabel3.setText("Listar Veiculos");
         jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -72,7 +79,7 @@ public class TelaVeiculos extends javax.swing.JFrame {
         );
 
         jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/resume.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/resume.png"))); // NOI18N
         jLabel5.setText("Editar Veiculo ");
         jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,7 +89,7 @@ public class TelaVeiculos extends javax.swing.JFrame {
         });
 
         jlSair.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/logout.png"))); // NOI18N
+        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logout.png"))); // NOI18N
         jlSair.setText("Voltar Para a tela do gerente ");
         jlSair.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jlSair.addMouseListener(new java.awt.event.MouseAdapter() {

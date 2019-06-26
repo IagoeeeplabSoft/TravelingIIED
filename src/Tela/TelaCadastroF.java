@@ -9,10 +9,12 @@ import DAO.Conexao;
 import DAO.FuncionarioDAO;
 import Modelo.Funcionario;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -35,6 +37,9 @@ public class TelaCadastroF extends javax.swing.JFrame {
     byte[] byteArray;
     
     public TelaCadastroF() {
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
         initComponents();
     }
     public void salvar() throws IOException{
@@ -62,10 +67,13 @@ public class TelaCadastroF extends javax.swing.JFrame {
    
     f.setLogin(email);
     f.setSenha(senha);
+    if(nome.equalsIgnoreCase("")|| sobrenome.equalsIgnoreCase("")||telefone.equalsIgnoreCase("")||cpf.equalsIgnoreCase("")||cargo.equalsIgnoreCase("")){
+        JOptionPane.showMessageDialog(null,"campo não preenchido");
+    }else{
        FuncionarioDAO fDAO = new FuncionarioDAO(con);
        
        JOptionPane.showMessageDialog(null,fDAO.Cadastrar(f) );
-       
+     
    tfnome.setText("");
    tfsobrenome.setText("");
    tfemail.setText("");
@@ -76,7 +84,7 @@ public class TelaCadastroF extends javax.swing.JFrame {
    jcbCargo.setSelectedItem("");
    
    
-    
+     }
     }
     public void getFoto() throws IOException{
     JFileChooser buscar_foto = new JFileChooser();
@@ -122,9 +130,8 @@ public class TelaCadastroF extends javax.swing.JFrame {
         jcbCargo = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -374,23 +381,15 @@ public class TelaCadastroF extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(123, 239, 178));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/icons8-gerente-52.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(261, 261, 261))
+            .addGap(0, 583, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addContainerGap())
+            .addGap(0, 22, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -462,6 +461,8 @@ public class TelaCadastroF extends javax.swing.JFrame {
     }//GEN-LAST:event_button1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        telaGerente te = new telaGerente();
+        te.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -515,7 +516,6 @@ public class TelaCadastroF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

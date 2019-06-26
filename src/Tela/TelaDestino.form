@@ -68,7 +68,7 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="33" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jlSair" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
@@ -83,7 +83,7 @@
               <Font name="Microsoft Sans Serif" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/Img/icons1/beach.png"/>
+              <Image iconType="3" name="/Img/beach.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar Destino"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -102,7 +102,7 @@
               <Font name="Microsoft Sans Serif" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/Img/icons1/bullet.png"/>
+              <Image iconType="3" name="/IMG/bullet.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Listar Destino"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -141,7 +141,7 @@
               <Font name="Microsoft Sans Serif" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/Img/icons1/resume.png"/>
+              <Image iconType="3" name="/IMG/resume.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Editar Destino"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -160,7 +160,7 @@
               <Font name="Microsoft Sans Serif" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/Img/icons1/logout.png"/>
+              <Image iconType="3" name="/IMG/logout.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Voltar Para a tela do gerente "/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

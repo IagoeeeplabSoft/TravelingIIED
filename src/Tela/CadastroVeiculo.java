@@ -9,10 +9,12 @@ import DAO.Conexao;
 import DAO.VeiculoDAO;
 import Modelo.Veiculo;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,6 +35,9 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     
     public CadastroVeiculo() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
     }
 public void salvar() throws IOException{
         String marca, tipo;

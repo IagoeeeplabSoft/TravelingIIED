@@ -10,6 +10,9 @@ import DAO.FuncionarioDAO;
 import DAO.VeiculoDAO;
 import Modelo.Funcionario;
 import Modelo.Veiculo;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
@@ -24,6 +27,9 @@ public class EditarV extends javax.swing.JFrame {
      */
     public EditarV() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
     }
 
     /**

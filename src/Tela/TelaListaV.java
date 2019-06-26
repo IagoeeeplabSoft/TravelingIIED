@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import DAO.Conexao;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 
 /**
  *
@@ -25,6 +28,9 @@ public class TelaListaV extends javax.swing.JFrame {
      * Creates new form TelaListaV
      */
     public TelaListaV() {
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
         initComponents();
         AtualizaTable();
                 

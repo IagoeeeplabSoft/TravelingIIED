@@ -5,6 +5,10 @@
  */
 package Tela;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+
 /**
  *
  * @author José Iago
@@ -16,6 +20,9 @@ public class TelaDestino extends javax.swing.JFrame {
      */
     public TelaDestino() {
         initComponents();
+         URL url = this.getClass().getResource("/Img/sistematravels-convertido.jpg");  
+       Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url); 
+       setIconImage(iconeTitulo);
     }
 
     /**
@@ -39,7 +46,7 @@ public class TelaDestino extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/beach.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/beach.png"))); // NOI18N
         jLabel2.setText("Cadastrar Destino");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -49,7 +56,7 @@ public class TelaDestino extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/bullet.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/bullet.png"))); // NOI18N
         jLabel3.setText("Listar Destino");
         jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -72,7 +79,7 @@ public class TelaDestino extends javax.swing.JFrame {
         );
 
         jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/resume.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/resume.png"))); // NOI18N
         jLabel5.setText("Editar Destino");
         jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,7 +89,7 @@ public class TelaDestino extends javax.swing.JFrame {
         });
 
         jlSair.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons1/logout.png"))); // NOI18N
+        jlSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logout.png"))); // NOI18N
         jlSair.setText("Voltar Para a tela do gerente ");
         jlSair.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jlSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,7 +123,7 @@ public class TelaDestino extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(33, 33, 33)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jlSair)
                 .addGap(31, 31, 31))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
